@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ @(#)JavaTVSampleFile01.xml	1.30 08/09/15
+ 
+ Copyright 2008 Sun Microsystems, Inc. All rights reserved. 
+ Use is subject to license terms.
+ 
+-->
+
+<!DOCTYPE TestData SYSTEM "JavaTVServiceFile.dtd">
+   
+<TestData>
+
+   <DataBundle NAME="test1.1">
+
+      <BundleDescription>
+      </BundleDescription>
+   
+      <FavoriteService NAME="Duke's Favorites" SERVICENAMES="SERV1,SERV3"/>
+      <FavoriteService NAME="Movie Specials"   SERVICENAMES="SERV4,SERV5,SERV13"/>
+   
+      <Bouquet NAME="TCK-PREMIUM-PACKAGE" ID="25" SITYPE="DVBSI"/>
+      <Bouquet NAME="TBD-PREMIUM-PACKAGE" ID="26" SITYPE="DVBSI"/>
+      <Bouquet NAME="WORLDGATE-PREMIUM-PACKAGE" ID="27" SITYPE="DVBSI" />
+   
+      <Network NAME="SERV1-COMPLETE" ID="12" SITYPE="DVBSI" />
+      <Network NAME="SERV2-COMPLETE" ID="13" SITYPE="DVBSI" />
+      <Network NAME="SERV3-COMPLETE" ID="11" SITYPE="DVBSI" />
+   
+      <TransportStream NAME="SERV1-COMPLETE"  ID="3" SITYPE="DVBSI" />
+      <TransportStream NAME="SERV2-COMPLETE"  ID="4" SITYPE="DVBSI" />
+      <TransportStream NAME="SERV3-BROADCAST" ID="5" SITYPE="DVBSI" NETWORKID ="11"/>
+      <TransportStream NAME="SERV3-REGIONAL"  ID="6" SITYPE="DVBSI" NETWORKID ="11"/>
+   
+      <RatingDimension DIMENSIONNAME = "MPAA">
+         <Rating NAME="G"     DESCRIPTION="General Audience" />
+         <Rating NAME="PG"    DESCRIPTION="Parental Guidance" />
+         <Rating NAME="PG-13" DESCRIPTION="Parental Guidance under 13" />
+         <Rating NAME="R"     DESCRIPTION="Restricted" />
+         <Rating NAME="X"     DESCRIPTION="No one under 21" />
+         <Rating NAME="MA"    DESCRIPTION="Mature Audience" />
+      </RatingDimension>
+   
+      <RatingDimension DIMENSIONNAME = "YAMPAA">
+         <Rating NAME="A"   DESCRIPTION="Phoney desc for A" />
+         <Rating NAME="B"   DESCRIPTION="Phoney desc for B" />
+         <Rating NAME="C"   DESCRIPTION="Phoney desc for C" />
+         <Rating NAME="D"   DESCRIPTION="Phoney desc for D" />
+         <Rating NAME="E"   DESCRIPTION="Phoney desc for E" />
+      </RatingDimension>
+   
+      <PreferredLanguage VALUE="heb" />
+   
+      <ServiceTransforms 
+         NAME="SERV1-SERVICES" 
+         LIST="SERV1,SERV5,SERV1-NEWS"/>
+
+      <Service 
+         NAME="SERV1-SERVICES" 
+         SERVICETYPE="DIGITAL_TV" 
+         SITYPE="DVBSI"
+         NUMBER="6" 
+         MINORNUMBER="1"
+         SIMULATION=""/>
+   
+      <Service 
+         NAME="SERV1" 
+         SERVICETYPE="DIGITAL_TV" 
+         SITYPE="DVBSI"
+         NUMBER="6" 
+         MINORNUMBER="1"
+         CALIMIT="interrupt"
+         SIMULATION="http://109.37.169.249/Sample.mov">
+   
+         <ServiceDetails 
+            PROVIDERNAME="TCK" 
+            LONGNAME="American Broadcasting"
+            DESCRIPTION="American Broadcasting"
+            DELIVERYSYSTEMTYPE="CABLE">
+   
+            <ProgramSchedule>
+
+               <ProgramEvent 
+                  NAME="SERV1 Evening News"
+                  DURATION="120"
+                  DESCRIPTION="Crisis in Yugoslavia"
+                  STARTTIME="sysdate">
+                  <ContentRatingAdvisory 
+                     DIMENSIONNAME="MPAA" RATINGNAME="Mature Audience" />
+                  <ContentRatingAdvisory 
+                     DIMENSIONNAME="YAMPAA" RATINGNAME="Phoney desc for E"/>
+               </ProgramEvent>
+
+            </ProgramSchedule>
+   
+         </ServiceDetails>
+
+      </Service>
+
+      <Service 
+         NAME="SERV2" 
+         SERVICETYPE="DIGITAL_TV" 
+         SITYPE="DVBSI"
+         NUMBER="4" 
+         MINORNUMBER="1"
+         SIMULATION="http://109.37.169.249/Sample.mov">
+   
+         <ServiceDetails PROVIDERNAME="TCK" 
+            LONGNAME="Columbia Broadcasting"
+            DESCRIPTION="Columbia Broadcasting"
+            DELIVERYSYSTEMTYPE="CABLE">
+   
+         <ProgramSchedule>
+
+            <ProgramEvent 
+               NAME="SERV2 Daily News"
+               DURATION="120"
+               DESCRIPTION="Hint on progress in Washington DC"
+               STARTTIME="sysdate">
+               <ContentRatingAdvisory 
+                  DIMENSIONNAME="MPAA" RATINGNAME="General Audience"/>
+               <ContentRatingAdvisory 
+                  DIMENSIONNAME="YAMPAA" RATINGNAME="Phoney desc for A"/>
+            </ProgramEvent>
+   
+            <ProgramEvent 
+               NAME="47 hours"
+               DURATION="120"
+               DESCRIPTION="Making fortune on the Internet" 
+               STARTTIME="+120" />
+   
+            <ProgramEvent 
+               NAME="That's not life"
+               DURATION="120"
+               DESCRIPTION="Melodrama of a mid-aged couple"
+               STARTTIME="+240" />
+   
+            <ProgramEvent 
+               NAME="66 seconds"
+               DURATION="120"
+               DESCRIPTION="Latest news on a tire crisis"
+               STARTTIME="+360"
+               TRANSMITTIME="+30" />
+   
+            <ProgramEvent 
+               NAME="Survivant"
+               DURATION="120"
+               DESCRIPTION="And then there was one on the island"
+               STARTTIME="+480"
+               TRANSMITTIME="+45" />
+   
+            <ProgramEvent 
+               NAME="Family Rules"
+               DURATION="120"
+               DESCRIPTION="The should and should not for a happy family" 
+               STARTTIME="+600"
+               TRANSMITTIME="+60" />
+   
+         </ProgramSchedule>
+   
+         </ServiceDetails>
+   
+      </Service>
+
+      <Service 
+         NAME="SERV3" 
+         SERVICETYPE="DIGITAL_TV" 
+         SITYPE="DVBSI"
+         NUMBER="5" 
+         MINORNUMBER="1"
+         SIMULATION="http://109.37.169.249/Sample.mov">
+   
+         <ServiceDetails 
+            PROVIDERNAME="TCK" 
+            LONGNAME="National Broadcasting"
+            DESCRIPTION="National Broadcasting"
+            DELIVERYSYSTEMTYPE="UNKNOWN">
+   
+         </ServiceDetails>
+
+      </Service>
+
+      <Service 
+         NAME="SERV4" 
+         SERVICETYPE="DIGITAL_TV" 
+         SITYPE="DVBSI"
+         NUMBER="3" 
+         MINORNUMBER="1"
+         SIMULATION="http://109.37.169.249/Sample.mov">
+   
+         <ServiceDetails PROVIDERNAME="TCK" 
+            LONGNAME="Funny Movies"
+            DESCRIPTION="International Broadcasting"
+            DELIVERYSYSTEMTYPE="CABLE">
+   
+            <ProgramSchedule>
+               <ProgramEvent NAME="There's Something About Martha"
+                  DURATION="30"
+                  DESCRIPTION="How to decorate your livingroom"
+                  STARTTIME="sysdate" />
+               <ProgramEvent NAME="Black Kitten, White Kitten"
+                  DURATION="125"
+                  DESCRIPTION="Anderay Tarkovsky's science fiction reality"
+                  STARTTIME="+30" />
+               <ProgramEvent 
+                  NAME="Lock, Stock and two Smoked Barels"
+                  DURATION="115"
+                  DESCRIPTION="Giuseppe Tornatore's says what is a cinema for us"
+                  STARTTIME="+155" />
+               <ProgramEvent 
+                  NAME="American Apple Cake"
+                  DURATION="40"
+                  DESCRIPTION="Teens hoping to get lucky before their highschool graduation"
+                  STARTTIME="+270" />
+               <ProgramEvent 
+                  NAME="Recherche de Galaxie"
+                  DURATION="60"
+                  DESCRIPTION="Old TV stars regaining their pride though the galaxy quest"
+                  STARTTIME="+310" />
+            </ProgramSchedule>
+
+         </ServiceDetails>
+
+      </Service>
+
+      <Service 
+         NAME="SERV5" 
+         SERVICETYPE="DIGITAL_TV" 
+         SITYPE="DVBSI"
+         NUMBER="8" 
+         MINORNUMBER="1"
+         SIMULATION="http://109.37.169.249/Sample.mov">
+   
+         <ServiceDetails PROVIDERNAME="TCK" 
+            LONGNAME="Walt D's Network"
+            DESCRIPTION="Walt D's Network"
+            DELIVERYSYSTEMTYPE="CABLE" />
+
+      </Service>
+      
+      <Service 
+         NAME="SERV6" 
+         SERVICETYPE="DIGITAL_TV" SITYPE="DVBSI"
+         NUMBER="12" 
+         MINORNUMBER="1"
+         SIMULATION="http://109.37.169.249/Sample.mov"
+         ALTERNATE="http://109.37.169.249/Sample.mov">
+   
+         <ServiceDetails 
+            PROVIDERNAME="TCK" 
+            LONGNAME="The Sports Network"
+            DELIVERYSYSTEMTYPE="SATELLITE"
+            DESCRIPTION="The Sports Network channel 12"
+            CASYSTEMIDS="0,1">
+   
+            <ServiceComponent
+               NAME="SERV6-VIDEO" 
+               LANGUAGE="ENGLISH" 
+               STREAM_TYPE="VIDEO"
+               SIMULATION="http://109.37.169.249/Sample.mov" />
+   
+            <ServiceComponent
+               NAME="SERV6-AUDIO" 
+               LANGUAGE="ENGLISH" 
+               STREAM_TYPE="AUDIO"
+               SIMULATION="http://109.37.169.249/Sample.mov" />
+   
+            <ServiceComponent
+               NAME="SERV6-SUBTITLES" 
+               LANGUAGE="ENGLISH" 
+               STREAM_TYPE="SUBTITLES"
+               SIMULATION="http://109.37.169.249/Sample.mov" />
+
+            <ServiceComponent
+               NAME="SERV6-DATA" 
+               LANGUAGE="ENGLISH" 
+               STREAM_TYPE="DATA"
+               SIMULATION="http://109.37.169.249/Sample.mov" />
+   
+            <ServiceComponent
+               NAME="SERV6-SECTIONS" 
+               LANGUAGE="ENGLISH" 
+               STREAM_TYPE="SECTIONS"
+               SIMULATION="http://109.37.169.249/Sample.mov" />
+   
+         </ServiceDetails>
+   
+      </Service>
+      
+      <Service 
+         NAME="SERV7" 
+         SERVICETYPE="DIGITAL_TV" 
+         SITYPE="DVBSI"
+         NUMBER="12" 
+         MINORNUMBER="2"
+         SIMULATION="http://109.37.169.249/Sample.mov">
+   
+         <ServiceDetails PROVIDERNAME="TCK" 
+            LONGNAME="The Sports Network II"
+            DESCRIPTION="The Sports Network II, Northern California"
+            DELIVERYSYSTEMTYPE="CABLE" />
+   
+      </Service>
+      
+      <Service 
+         NAME="SERV8" 
+         SERVICETYPE="DIGITAL_TV" 
+         SITYPE="DVBSI"
+         NUMBER="23" 
+         MINORNUMBER="1"
+         SIMULATION="http://109.37.169.249/Sample.mov">
+   
+         <ServiceDetails PROVIDERNAME="TCK" 
+            LONGNAME="The Sports Network"
+            DESCRIPTION="The sports Network II, Southern California"
+            DELIVERYSYSTEMTYPE="TERRESTRIAL"
+            CASYSTEMIDS="3" />
+      
+      </Service>
+      
+      <Service 
+         NAME="SERV9" 
+         SERVICETYPE="DIGITAL_TV" 
+         SITYPE="DVBSI"
+         NUMBER="24" 
+         MINORNUMBER="1"
+         SIMULATION="http://109.37.169.249/Sample.mov">
+   
+         <ServiceDetails PROVIDERNAME="TCK" 
+            LONGNAME="Home and Garden Network"
+            DESCRIPTION="Home and Garden Network"
+            DELIVERYSYSTEMTYPE="TERRESTRIAL"
+            CASYSTEMIDS="2" />
+      
+      </Service>
+      
+      <Service 
+         NAME="SERV10" 
+         SERVICETYPE="DIGITAL_TV" 
+         SITYPE="DVBSI"
+         NUMBER="7" 
+         MINORNUMBER="1"
+         SIMULATION="http://109.37.169.249/Sample.mov">
+   
+         <ServiceDetails 
+            PROVIDERNAME="TCK" 
+            LONGNAME="Home Life Service"
+            DESCRIPTION="Home Life Service"
+            DELIVERYSYSTEMTYPE="CABLE">
+   
+            <ProgramSchedule>
+               <ProgramEvent NAME="Lifetime Live" 
+                  DURATION="30" 
+                  DESCRIPTION="Guide to a better life" 
+                  STARTTIME="sysdate" />
+               <ProgramEvent 
+                  NAME="Fried Green Bananas"
+                  DURATION="50" 
+                  DESCRIPTION="Movie about a girl discovering herself"
+                  STARTTIME="+30" />
+               <ProgramEvent 
+                  NAME="What a Wonderful World"
+                  DURATION="30" 
+                  DESCRIPTION="Heartwarming drama of a yound couple"
+                  STARTTIME="+80" />
+               <ProgramEvent 
+                  NAME="Room 101" 
+                  DURATION="30" 
+                  DESCRIPTION="Show with the host Paul Merton" 
+                  STARTTIME="+110" />
+            </ProgramSchedule>
+   
+            <ServiceComponent 
+               NAME="SERV10-SUBTITLE" 
+               SIMULATION="http://109.37.169.249/Sample.mov"
+               STREAM_TYPE="Video" 
+               LANGUAGE="jpn" />
+   
+        </ServiceDetails>
+   
+      </Service>
+      
+      <Service 
+         NAME="Serv11" 
+         SERVICETYPE="DIGITAL_TV" 
+         SITYPE="DVBSI"
+         NUMBER="1" 
+         MINORNUMBER="1"
+         SIMULATION="http://109.37.169.249/Sample.mov">
+   
+         <ServiceDetails PROVIDERNAME="TCK" 
+            LONGNAME="Great Movies"
+            DESCRIPTION="Movies channels that one have to see"
+            DELIVERYSYSTEMTYPE="CABLE">
+   
+            <ProgramSchedule>
+   
+               <ProgramEvent NAME="Brazil"
+                  DURATION="60"
+                  DESCRIPTION="Terry Gilliam's surrealistic story"
+                  STARTTIME="sysdate" >
+                  <ContentRatingAdvisory 
+                     DIMENSIONNAME="MPAA" 
+                     RATINGNAME="General Audience" />
+                  <ContentRatingAdvisory 
+                     DIMENSIONNAME="YAMPAA" 
+                     RATINGNAME="Phoney desc for A" />
+               </ProgramEvent>
+   
+               <ProgramEvent 
+                  NAME="Stalker"
+                  DURATION="60"
+                  DESCRIPTION="Andre T's science fiction reality"
+                  STARTTIME="+60" />
+               <ProgramEvent 
+                  NAME="Nuovo Cinema Paradiso"
+                  DURATION="20"
+                  DESCRIPTION="Giuseppe T's says what is a cinema for us"
+                  STARTTIME="+120" />
+               <ProgramEvent 
+                  NAME="The Nineteenth Gate"
+                  DURATION="20"
+                  DESCRIPTION="A rare-book broker's attempt to summon Saten"
+                  STARTTIME="+140" />
+               <ProgramEvent 
+                  NAME="Afganistan Beauty"
+                  DURATION="60"
+                  DESCRIPTION="A man in midlife crisis begins working out to impress his teenage daughter's friend"
+                  STARTTIME="+160" />
+            </ProgramSchedule>
+   
+            <ServiceComponent
+               NAME="Test Video Channel"
+               SIMULATION="http://109.37.169.249/Sample.mov" 
+               STREAM_TYPE="Video"
+               LANGUAGE="eng" />
+   
+         </ServiceDetails>
+   
+      </Service>
+   
+      <Service 
+         NAME="SERV12" 
+         SERVICETYPE="DIGITAL_TV" 
+         SITYPE="DVBSI"
+         NUMBER="2" 
+         MINORNUMBER="1"
+         SIMULATION="http://109.37.169.249/Sample.mov" >
+   
+         <ServiceDetails PROVIDERNAME="TCK" 
+            LONGNAME="Cult Movies"
+            DESCRIPTION="Cool Channel for Teens" 
+            DELIVERYSYSTEMTYPE="CABLE" >
+   
+            <ProgramSchedule>
+               <ProgramEvent 
+                  NAME="Trainspotters"
+                  DURATION="60"
+                  DESCRIPTION="Terry G's surrealistic story"
+                  STARTTIME="sysdate" />
+               <ProgramEvent 
+                  NAME="Pulp Nonfiction"
+                  DURATION="120"
+                  DESCRIPTION="Andrey T's science fiction reality"
+                  STARTTIME="+60" />
+               <ProgramEvent 
+                  NAME="The Bigger Lebowsky"
+                  DURATION="130"
+                  DESCRIPTION="Giuseppe T says what is a cinema for us"
+                  STARTTIME="+180" />
+               <ProgramEvent 
+                  NAME="Movie: SouthEast Park"
+                  DURATION="95"
+                  DESCRIPTION="What American children is all about"
+                  STARTTIME="+310" />
+               <ProgramEvent 
+                  NAME="The Matrices"
+                  DURATION="60"
+                  DESCRIPTION="Dilemma between virtuality and reality"
+                  STARTTIME="+405" />
+            </ProgramSchedule>
+
+         </ServiceDetails>
+
+      </Service>
+   
+      <Service 
+         NAME="SERV13" 
+         SERVICETYPE="DIGITAL_TV" 
+         SITYPE="DVBSI"
+         NUMBER="4" 
+         MINORNUMBER="1"
+         SIMULATION="http://109.37.169.249/Sample.mov">
+   
+         <ServiceDetails
+            PROVIDERNAME="TCK" 
+            LONGNAME="Oscar Movies"
+            DESCRIPTION="Human dramas and comedies"
+            DELIVERYSYSTEMTYPE="CABLE">
+   
+            <ProgramSchedule>
+               <ProgramEvent 
+                  NAME="The British patient"
+                  DURATION="60"
+                  DESCRIPTION="A flight too close to the sun and the long fall back to earth"
+                  STARTTIME="sysdate" />
+               <ProgramEvent 
+                  NAME="Cab Driver"
+                  DURATION="120"
+                  DESCRIPTION="Days in the life of a disaffected young veteran"
+                  STARTTIME="+60" />
+               <ProgramEvent 
+                  NAME="Schindler's catalogue"
+                  DURATION="80"
+                  DESCRIPTION="Fighting for the massacre during WWII"
+                  STARTTIME="+180" />
+               <ProgramEvent 
+                  NAME="Naturally Born Killer" 
+                  DURATION="60"
+                  DESCRIPTION="Friendship between a killer and a little girl"
+                  STARTTIME="+260" />
+               <ProgramEvent 
+                  NAME="Born on July Fourth"
+                  DURATION="120"
+                  DESCRIPTION="The suffering of the Vietnam veteran"
+                  STARTTIME="+320" />
+            </ProgramSchedule>
+
+         </ServiceDetails>
+
+      </Service>
+   
+      <Service 
+         NAME="SERV14" 
+         SERVICETYPE="DIGITAL_TV" 
+         SITYPE="DVBSI"
+         NUMBER="120" 
+         MINORNUMBER="1"
+         SIMULATION="http://109.37.169.249/Sample.mov"
+         ALTERNATE="http://109.37.169.249/Sample.mov">
+   
+         <ServiceDetails 
+            PROVIDERNAME="TCK" 
+            LONGNAME="Serv14: this is a test service for a bad mpeg file"
+            DESCRIPTION="A test service for a bad mpeg file"
+            DELIVERYSYSTEMTYPE="SATELLITE">
+   
+            <ServiceComponent
+               NAME="BAD-VIDEO" 
+               LANGUAGE="ENGLISH" 
+               STREAM_TYPE="VIDEO"
+               SIMULATION="http://109.37.169.249/Sample.mov" />
+   
+            <ServiceComponent
+               NAME="BAD-AUDIO" 
+               LANGUAGE="ENGLISH" 
+               STREAM_TYPE="AUDIO"
+               SIMULATION="http://109.37.169.249/Sample.mov" />
+   
+            <ServiceComponent
+               NAME="BAD-SUBTITLES" 
+               LANGUAGE="ENGLISH" 
+               STREAM_TYPE="SUBTITLES"
+               SIMULATION="http://109.37.169.249/Sample.mov" />
+
+            <ServiceComponent
+               NAME="BAD-DATA" 
+               LANGUAGE="ENGLISH" 
+               STREAM_TYPE="DATA"
+               SIMULATION="http://109.37.169.249/Sample.mov" />
+   
+            <ServiceComponent
+               NAME="BAD-SECTIONS" 
+               LANGUAGE="ENGLISH" 
+               STREAM_TYPE="SECTIONS"
+               SIMULATION="http://109.37.169.249/Sample.mov" />
+   
+         </ServiceDetails>
+
+      </Service>
+
+      <Service 
+         NAME="SERV11" 
+         SERVICETYPE="DIGITAL_TV" 
+         SITYPE="DVBSI"
+         NUMBER="6" 
+         MINORNUMBER="1"
+         SIMULATION="http://109.37.169.249/Sample.mov">
+   
+         <ServiceDetails 
+            PROVIDERNAME="TCK" 
+            LONGNAME="American Broadcasting"
+            DESCRIPTION="American Broadcasting"
+            DELIVERYSYSTEMTYPE="CABLE">
+   
+            <ProgramSchedule>
+               <ProgramEvent 
+                  NAME="SERV1 Evening News"
+                  DURATION="120"
+                  DESCRIPTION="Crisis in Yugoslavia"
+                  STARTTIME="sysdate">
+                  <ContentRatingAdvisory 
+                     DIMENSIONNAME="MPAA" RATINGNAME="Mature Audience" />
+                  <ContentRatingAdvisory 
+                     DIMENSIONNAME="YAMPAA" RATINGNAME="Phoney desc for E"/>
+               </ProgramEvent>
+
+            </ProgramSchedule>
+   
+	</ServiceDetails>
+      </Service>
+
+   <RemoveList>
+   </RemoveList>
+      
+   </DataBundle>
+
+</TestData>

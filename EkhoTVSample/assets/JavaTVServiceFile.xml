@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ @(#)JavaTVServiceFile.xml	1.7 08/09/15
+ 
+ Copyright 2008 Sun Microsystems, Inc. All rights reserved. 
+ Use is subject to license terms.
+ 
+-->
+
+<!DOCTYPE TESTDATA SYSTEM "JavaTVServiceFile.dtd">
+
+<TESTDATA>
+
+    <HEADING>
+        This is experimantal Java TV resource file for TransportInformation
+        dynamic test. It contains two identical bundles. First bundle contains 4
+        services and second bundle contains 5 servises. Hopefuly this will generate
+        SIChangeEvent with ADD type.
+
+        Athor: kirill@israel.sun.com
+        Date:  31/1/2000
+    </HEADING>
+
+    <DataBundle NAME="test1.1">
+        <BundleDescription>
+            This Bundle contains 4 services.
+        </BundleDescription>
+
+        <JAVATVSI>
+            <PreferredLanguage VALUE="heb" />
+            <Service SERVICENAME="GM"
+                     SERVICENUMBER="1" SERVICEMINORNUMBER="1"
+                     SERVICETYPE="DIGITAL_TV"
+                     SERVICELOCATOR="file:./video/Sample.mov"
+                     INSTANCES="false">
+
+                <ServiceDetails LONGNAME="Good Movies"
+                                SERVICEDESCRIPTION="Movies that one have to see">
+                    <ProgramSchedule>
+                        <ProgramEvent EVENTNAME="Brazil"
+                                      DURATION="8520"
+                                      EVENTDESCRIPTION="Terry Gilliam's surrealistic story"
+                                      STARTTIME="05/17/2000 14:17"
+                                      ENDTIME="05/17/2000 15:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="Stalker"
+                                    DURATION="9780"
+                                    EVENTDESCRIPTION="Andrey Tarkovsky's science fiction reality"
+                                    STARTTIME="05/17/2000 15:17"
+                                    ENDTIME="05/17/2000 16:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="Nuovo Cinema Paradiso"
+                                    DURATION="7680"
+                                    EVENTDESCRIPTION="Giuseppe Tornatore's says what is a cinema for us"
+                                    STARTTIME="05/17/2000 16:17"
+                                    ENDTIME="05/17/2000 16:37">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="TDB1"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="TDB1 story"
+                                    STARTTIME="05/17/2000 16:37"
+                                    ENDTIME="05/17/2000 17:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="TDB2"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="TDB2 story"
+                                    STARTTIME="05/17/2000 17:17"
+                                    ENDTIME="05/17/2000 18:17">
+                        </ProgramEvent>
+                    </ProgramSchedule>
+                    <ServiceComponent  NAME="Test Video Channel"
+                                       LOCATOR="file:./video/Sample.mov"
+                                       COMPONENTTYPE="Video"
+                                       COMPONENTLANGUAGE="eng">
+                    </ServiceComponent>
+                </ServiceDetails>
+            </Service>
+            <Service SERVICENAME="CM"
+                    SERVICENUMBER="2" SERVICEMINORNUMBER="1"
+                    SERVICETYPE="DIGITAL_TV"
+                    SERVICELOCATOR="file:./video/Sample.mov"
+                    INSTANCES="false">
+
+                <ServiceDetails LONGNAME="Cult Movies"
+                                SERVICEDESCRIPTION="Say, you've seen them if you wanna be cool">
+                    <ProgramSchedule>
+                        <ProgramEvent EVENTNAME="Trainspotting"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="Terry Gilliam's surrealistic story"
+                                    STARTTIME="05/17/2000 14:17"
+                                    ENDTIME="05/17/2000 15:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="Pulp Fiction"
+                                    DURATION="9780"
+                                    EVENTDESCRIPTION="Andrey Tarkovsky's science fiction reality"
+                                    STARTTIME="05/17/2000 15:17"
+                                    ENDTIME="05/17/2000 16:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="The Big Lebowsky"
+                                    DURATION="7680"
+                                    EVENTDESCRIPTION="Giuseppe Tornatore's says what is a cinema for us"
+                                    STARTTIME="05/17/2000 16:17"
+                                    ENDTIME="05/17/2000 16:37">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="Beavis and Butthead do America"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="TDB1 story"
+                                    STARTTIME="05/17/2000 16:37"
+                                    ENDTIME="05/17/2000 17:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="TDB1"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="TDB2 story"
+                                    STARTTIME="05/17/2000 17:17"
+                                    ENDTIME="05/17/2000 18:17">
+                        </ProgramEvent>
+                    </ProgramSchedule>
+                </ServiceDetails>
+            </Service>
+            <Service SERVICENAME="FM"
+                    SERVICENUMBER="3" SERVICEMINORNUMBER="1"
+                    SERVICETYPE="DIGITAL_TV"
+                    SERVICELOCATOR="file:./video/Sample.mov"
+                    INSTANCES="false">
+                <ServiceDetails LONGNAME="Funny Movies"
+                                SERVICEDESCRIPTION="Something to relax on after GM channel">
+
+                    <ProgramSchedule>
+                        <ProgramEvent EVENTNAME="Something about Mary"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="Terry Gilliam's surrealistic story"
+                                    STARTTIME="05/17/2000 14:17"
+                                    ENDTIME="05/17/2000 15:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="Black Cat, White Cat"
+                                    DURATION="9780"
+                                    EVENTDESCRIPTION="Anderay Tarkovsky's science fiction reality"
+                                    STARTTIME="05/17/2000 15:17"
+                                    ENDTIME="05/17/2000 16:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="Lock, Stock and two Smoked Barels"
+                                    DURATION="7680"
+                                    EVENTDESCRIPTION="Giuseppe Tornatore's says what is a cinema for us"
+                                    STARTTIME="05/17/2000 16:17"
+                                    ENDTIME="05/17/2000 16:37">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="TDB1"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="TDB1 story"
+                                    STARTTIME="05/17/2000 16:37"
+                                    ENDTIME="05/17/2000 17:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="TDB2"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="TDB2 story"
+                                    STARTTIME="05/17/2000 17:17"
+                                    ENDTIME="05/17/2000 18:17">
+                        </ProgramEvent>
+                    </ProgramSchedule>
+                </ServiceDetails>
+            </Service>
+            <Service SERVICENAME="OM"
+                    SERVICENUMBER="4" SERVICEMINORNUMBER="1"
+                    SERVICETYPE="DIGITAL_TV"
+                    SERVICELOCATOR="file:./video/Sample.mov"
+                    INSTANCES="false">
+                <ServiceDetails LONGNAME="Oscar Movies"
+                                SERVICEDESCRIPTION="Plain Movies, that got sertification!">
+
+                    <ProgramSchedule>
+                        <ProgramEvent EVENTNAME="English patient"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="Terry Gilliam's surrealistic story"
+                                    STARTTIME="05/17/2000 14:17"
+                                    ENDTIME="05/17/2000 15:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="Burned by the Sun"
+                                    DURATION="9780"
+                                    EVENTDESCRIPTION="Anderay Tarkovsky's science fiction reality"
+                                    STARTTIME="05/17/2000 15:17"
+                                    ENDTIME="05/17/2000 16:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="TDB3"
+                                    DURATION="7680"
+                                    EVENTDESCRIPTION="Giuseppe Tornatore's says what is a cinema for us"
+                                    STARTTIME="05/17/2000 16:17"
+                                    ENDTIME="05/17/2000 16:37">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="TDB1"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="TDB1 story"
+                                    STARTTIME="05/17/2000 16:37"
+                                    ENDTIME="05/17/2000 17:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="TDB2"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="TDB2 story"
+                                    STARTTIME="05/17/2000 17:17"
+                                    ENDTIME="05/17/2000 18:17">
+                        </ProgramEvent>
+                    </ProgramSchedule>
+                </ServiceDetails>
+            </Service>
+
+        </JAVATVSI>
+    </DataBundle>
+
+    <DataBundle NAME="test1.2">
+        <BundleDescription>
+            This Bundle contains 5 services.
+        </BundleDescription>
+
+        <JAVATVSI>
+            <PreferredLanguage VALUE="rus" />
+            <Service SERVICENAME="GM1"
+                    SERVICENUMBER="1" SERVICEMINORNUMBER="1"
+                    SERVICETYPE="DIGITAL_TV"
+                    SERVICELOCATOR="file:./video/Sample.mov"
+                    INSTANCES="false">
+
+                <ServiceDetails LONGNAME="Good Movies"
+                                SERVICEDESCRIPTION="Movies that one have to see">
+                    <ProgramSchedule>
+                        <ProgramEvent EVENTNAME="Brazil"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="Terry Gilliam's surrealistic story"
+                                    STARTTIME="05/17/2000 14:17"
+                                    ENDTIME="05/17/2000 15:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="Stalker"
+                                    DURATION="9780"
+                                    EVENTDESCRIPTION="Andrey Tarkovsky's science fiction reality"
+                                    STARTTIME="05/17/2000 15:17"
+                                    ENDTIME="05/17/2000 15:37">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="Nuovo Cinema Paradiso"
+                                    DURATION="7680"
+                                    EVENTDESCRIPTION="Giuseppe Tornatore's says what is a cinema for us"
+                                    STARTTIME="05/17/2000 15:37"
+                                    ENDTIME="05/17/2000 16:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="TDB1"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="TDB1 story"
+                                    STARTTIME="05/17/2000 16:17"
+                                    ENDTIME="05/17/2000 17:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="TDB2"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="TDB2 story"
+                                    STARTTIME="05/17/2000 17:17"
+                                    ENDTIME="05/17/2000 18:17">
+                        </ProgramEvent>
+                    </ProgramSchedule>
+                </ServiceDetails>
+            </Service>
+            <Service SERVICENAME="CM1"
+                    SERVICENUMBER="2" SERVICEMINORNUMBER="1"
+                    SERVICETYPE="DIGITAL_TV"
+                    SERVICELOCATOR="file:./video/Sample.mov"
+                    INSTANCES="false">
+
+                <ServiceDetails LONGNAME="Cult Movies"
+                                SERVICEDESCRIPTION="Say, you've seen them if you wanna be cool">
+                    <ProgramSchedule>
+                        <ProgramEvent EVENTNAME="Trainspotting"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="Terry Gilliam's surrealistic story"
+                                    STARTTIME="05/17/2000 14:17"
+                                    ENDTIME="05/17/2000 15:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="Pulp Fiction"
+                                    DURATION="9780"
+                                    EVENTDESCRIPTION="Andrey Tarkovsky's science fiction reality"
+                                    STARTTIME="05/17/2000 15:17"
+                                    ENDTIME="05/17/2000 16:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="The Big Lebowsky"
+                                    DURATION="7680"
+                                    EVENTDESCRIPTION="Giuseppe Tornatore's says what is a cinema for us"
+                                    STARTTIME="05/17/2000 16:17"
+                                    ENDTIME="05/17/2000 16:37">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="Beavis and Butthead do America"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="TDB1 story"
+                                    STARTTIME="05/17/2000 16:37"
+                                    ENDTIME="05/17/2000 17:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="TDB1"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="TDB2 story"
+                                    STARTTIME="05/17/2000 17:17"
+                                    ENDTIME="05/17/2000 18:17">
+                        </ProgramEvent>
+                    </ProgramSchedule>
+
+                </ServiceDetails>
+            </Service>
+            <Service SERVICENAME="FM1"
+                    SERVICENUMBER="3" SERVICEMINORNUMBER="1"
+                    SERVICETYPE="DIGITAL_TV"
+                    SERVICELOCATOR="file:./video/Sample.mov"
+                    INSTANCES="false">
+                <ServiceDetails LONGNAME="Funny Movies"
+                                SERVICEDESCRIPTION="Something to relax on after GM channel">
+
+                    <ProgramSchedule>
+                        <ProgramEvent EVENTNAME="Something about Mary"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="Terry Gilliam's surrealistic story"
+                                    STARTTIME="05/17/2000 14:17"
+                                    ENDTIME="05/17/2000 15:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="Black Cat, White Cat"
+                                    DURATION="9780"
+                                    EVENTDESCRIPTION="Anderay Tarkovsky's science fiction reality"
+                                    STARTTIME="05/17/2000 15:17"
+                                    ENDTIME="05/17/2000 16:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="Lock, Stock and two Smoked Barels"
+                                    DURATION="7680"
+                                    EVENTDESCRIPTION="Giuseppe Tornatore's says what is a cinema for us"
+                                    STARTTIME="05/17/2000 16:17"
+                                    ENDTIME="05/17/2000 16:37">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="TDB1"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="TDB1 story"
+                                    STARTTIME="05/17/2000 16:37"
+                                    ENDTIME="05/17/2000 17:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="TDB2"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="TDB2 story"
+                                    STARTTIME="05/17/2000 17:17"
+                                    ENDTIME="05/17/2000 18:17">
+                        </ProgramEvent>
+                    </ProgramSchedule>
+                </ServiceDetails>
+            </Service>
+            <Service SERVICENAME="OM1"
+                    SERVICENUMBER="4" SERVICEMINORNUMBER="1"
+                    SERVICETYPE="DIGITAL_TV"
+                    SERVICELOCATOR="file:./video/Sample.mov"
+                    INSTANCES="false">
+                <ServiceDetails LONGNAME="Oscar Movies"
+                                SERVICEDESCRIPTION="Plain Movies, that got sertification!">
+
+                    <ProgramSchedule>
+                        <ProgramEvent EVENTNAME="English patient"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="Terry Gilliam's surrealistic story"
+                                    STARTTIME="05/17/2000 14:17"
+                                    ENDTIME="05/17/2000 15:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="Burned by the Sun"
+                                    DURATION="9780"
+                                    EVENTDESCRIPTION="Anderay Tarkovsky's science fiction reality"
+                                    STARTTIME="05/17/2000 15:17"
+                                    ENDTIME="05/17/2000 16:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="TDB3"
+                                    DURATION="7680"
+                                    EVENTDESCRIPTION="Giuseppe Tornatore's says what is a cinema for us"
+                                    STARTTIME="05/17/2000 16:17"
+                                    ENDTIME="05/17/2000 16:37">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="TDB1"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="TDB1 story"
+                                    STARTTIME="05/17/2000 16:37"
+                                    ENDTIME="05/17/2000 17:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="TDB2"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="TDB2 story"
+                                    STARTTIME="05/17/2000 17:17"
+                                    ENDTIME="05/17/2000 18:17">
+                        </ProgramEvent>
+                    </ProgramSchedule>
+                </ServiceDetails>
+            </Service>
+            <Service SERVICENAME="YWNSYMM"
+                    SERVICENUMBER="5" SERVICEMINORNUMBER="1"
+                    SERVICETYPE="DIGITAL_TV"
+                    SERVICELOCATOR="file:./video/Sample.mov"
+                    INSTANCES="false">
+                <ServiceDetails LONGNAME="You Will Not Say Your Ma Movies"
+                                SERVICEDESCRIPTION="Something to relax on">
+
+                    <ProgramSchedule>
+                        <ProgramEvent EVENTNAME="YWNSYMM A"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="Terry Gilliam's surrealistic story"
+                                    STARTTIME="05/17/2000 14:17"
+                                    ENDTIME="05/17/2000 15:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="YWNSYMM B"
+                                    DURATION="9780"
+                                    EVENTDESCRIPTION="Anderay Tarkovsky's science fiction reality"
+                                    STARTTIME="05/17/2000 15:17"
+                                    ENDTIME="05/17/2000 16:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="YWNSYMM C"
+                                    DURATION="7680"
+                                    EVENTDESCRIPTION="Giuseppe Tornatore's says what is a cinema for us"
+                                    STARTTIME="05/17/2000 16:17"
+                                    ENDTIME="05/17/2000 16:37">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="YWNSYMM D"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="TDB1 story"
+                                    STARTTIME="05/17/2000 16:37"
+                                    ENDTIME="05/17/2000 17:17">
+                        </ProgramEvent>
+                        <ProgramEvent EVENTNAME="YWNSYMM EEEEA"
+                                    DURATION="8520"
+                                    EVENTDESCRIPTION="TDB2 story"
+                                    STARTTIME="05/17/2000 17:17"
+                                    ENDTIME="05/17/2000 18:17">
+                        </ProgramEvent>
+                    </ProgramSchedule>
+                </ServiceDetails>
+            </Service>
+        </JAVATVSI>
+    </DataBundle>
+</TESTDATA>

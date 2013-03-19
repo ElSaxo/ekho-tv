@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+
+<!--
+ @(#)JavaTVServiceFile.dtd	1.18 08/09/15
+ 
+ Copyright 2008 Sun Microsystems, Inc. All rights reserved. 
+ Use is subject to license terms.
+ 
+-->
+
+
+<!ELEMENT TestData (HEADING?,DataBundle+)>
+<!ELEMENT Heading (#PCDATA)>
+<!ELEMENT DataBundle (BundleDescription?,FavoriteService*,PreferredLanguage?, TransportStream*,Network*,Bouquet*,Xlet*,IPDatagram*,RatingDimension*,Service*,ServiceTransforms*,RemoveList*,RemoveSIDatabase*)*>
+	<!ATTLIST DataBundle
+		NAME ID #REQUIRED
+	>
+<!ELEMENT FavoriteService EMPTY>
+	<!ATTLIST FavoriteService
+		NAME CDATA #REQUIRED
+		SERVICENAMES CDATA #REQUIRED
+	>
+<!ELEMENT IPDatagram EMPTY>
+<!ELEMENT BundleDescription (#PCDATA)>
+<!ELEMENT PreferredLanguage EMPTY>
+	<!ATTLIST PreferredLanguage
+		VALUE CDATA #REQUIRED
+	>
+<!ELEMENT RatingDimension (Rating)+>
+	<!ATTLIST RatingDimension
+		DIMENSIONNAME CDATA #REQUIRED
+	>
+<!ELEMENT Rating EMPTY>
+	<!ATTLIST Rating
+		NAME CDATA #REQUIRED
+		DESCRIPTION CDATA #REQUIRED
+	>
+<!ELEMENT Service (ServiceDetails)?>
+	<!ATTLIST Service
+		NAME CDATA #REQUIRED
+		SERVICETYPE CDATA #REQUIRED
+		SITYPE CDATA #REQUIRED
+		SIMULATION CDATA #REQUIRED
+		ALTERNATE CDATA #IMPLIED
+		NUMBER CDATA #IMPLIED
+		MINORNUMBER CDATA #IMPLIED
+		CALIMIT CDATA #IMPLIED
+		TRANSMITTIME CDATA #IMPLIED
+	>
+<!ELEMENT ServiceDetails (ProgramSchedule*,ServiceComponent*,ServiceComponentData*)*>
+	<!ATTLIST ServiceDetails
+		LONGNAME CDATA #REQUIRED
+		PROVIDERNAME CDATA #REQUIRED
+		DELIVERYSYSTEMTYPE CDATA #REQUIRED
+		DESCRIPTION CDATA #IMPLIED
+		CASYSTEMIDS CDATA #IMPLIED
+		TRANSMITTIME CDATA #IMPLIED
+	>
+<!ELEMENT ProgramSchedule (ProgramEvent)*>
+<!ELEMENT ProgramEvent (ContentRatingAdvisory*,ServiceComponent*,ServiceComponentData*)*>
+	<!ATTLIST ProgramEvent
+		NAME CDATA #REQUIRED
+		DURATION CDATA #REQUIRED
+		STARTTIME CDATA #REQUIRED
+		DESCRIPTION CDATA #REQUIRED
+		TRANSMITTIME CDATA #IMPLIED
+	>
+<!ELEMENT ServiceTransforms EMPTY> 
+	<!ATTLIST ServiceTransforms
+		NAME CDATA #REQUIRED
+		LIST CDATA #REQUIRED
+	>
+<!ELEMENT ContentRatingAdvisory EMPTY>
+	<!ATTLIST ContentRatingAdvisory
+		DIMENSIONNAME CDATA #REQUIRED
+		RATINGNAME CDATA #REQUIRED
+		RATINGVALUE CDATA #IMPLIED
+	>
+<!ELEMENT ServiceComponent EMPTY>
+	<!ATTLIST ServiceComponent
+		NAME CDATA #REQUIRED
+		LANGUAGE CDATA #REQUIRED
+		STREAM_TYPE CDATA #REQUIRED
+		AUTORUN CDATA #IMPLIED
+		SIMULATION CDATA #IMPLIED
+		ALTERNATE CDATA #IMPLIED
+		CALIMIT CDATA #IMPLIED
+		TRANSMITTIME CDATA #IMPLIED
+	>
+<!ELEMENT ServiceComponentData EMPTY>
+	<!ATTLIST ServiceComponentData
+		NAME CDATA #REQUIRED
+		LANGUAGE CDATA #REQUIRED
+		PATH CDATA #IMPLIED
+		ARGS CDATA #IMPLIED
+		AUTORUN CDATA #IMPLIED
+		CALIMIT CDATA #IMPLIED
+		TRANSMITTIME CDATA #IMPLIED
+		ISSERVICEUNBOUND CDATA #IMPLIED
+	>
+<!ELEMENT TransportStream EMPTY>
+	<!ATTLIST TransportStream
+		ID CDATA #REQUIRED
+		NAME CDATA #REQUIRED
+		SITYPE CDATA #REQUIRED
+		TRANSMITTIME CDATA #IMPLIED
+		NETWORKID CDATA #IMPLIED
+	>
+<!ELEMENT Network EMPTY>
+	<!ATTLIST Network
+		ID CDATA #REQUIRED
+		NAME CDATA #REQUIRED
+		SITYPE CDATA #REQUIRED
+		TRANSMITTIME CDATA #IMPLIED
+	>
+<!ELEMENT Bouquet EMPTY>
+	<!ATTLIST Bouquet
+		ID CDATA #REQUIRED
+		NAME CDATA #REQUIRED
+		SITYPE CDATA #REQUIRED
+		TRANSMITTIME CDATA #IMPLIED
+	>
+<!ELEMENT Xlet EMPTY>
+	<!ATTLIST Xlet
+		NAME CDATA #REQUIRED
+		PATH CDATA #REQUIRED
+		ARGS CDATA #IMPLIED
+		TRANSMITTIME CDATA #IMPLIED
+	>
+<!ELEMENT RemoveList (RemoveService*, RemoveProgramEvent*, RemoveBouquet*, 
+	RemoveNetwork*, RemoveTransportStream*,
+	RemoveServiceDetails*, RemoveServiceComponent*)*>
+
+<!ELEMENT RemoveService EMPTY>
+	<!ATTLIST RemoveService
+		NAME CDATA #REQUIRED
+		REASON CDATA #IMPLIED
+	>
+<!ELEMENT RemoveProgramEvent EMPTY>
+	<!ATTLIST RemoveProgramEvent
+		SERVICE_NAME CDATA #REQUIRED
+		PROGRAM_NAME CDATA #REQUIRED
+	>
+<!ELEMENT RemoveBouquet EMPTY>
+	<!ATTLIST RemoveBouquet
+		ID CDATA #REQUIRED
+	>
+<!ELEMENT RemoveNetwork EMPTY>
+	<!ATTLIST RemoveNetwork
+		ID CDATA #REQUIRED
+	>
+<!ELEMENT RemoveTransportStream EMPTY>
+	<!ATTLIST RemoveTransportStream
+		ID CDATA #REQUIRED
+	>
+<!ELEMENT RemoveServiceDetails EMPTY>
+	<!ATTLIST RemoveServiceDetails
+		NAME CDATA #REQUIRED
+	>
+<!ELEMENT RemoveServiceComponent EMPTY>
+	<!ATTLIST RemoveServiceComponent
+		NAME CDATA #REQUIRED
+	>
+<!ELEMENT RemoveSIDatabase EMPTY>
